@@ -125,6 +125,7 @@ class _FlowState(MutableMapping):
 
     def __setitem__(self, key, value):
         self._self_data[key] = value
+        self._merged_data.pop(key, None)
 
     def __delitem__(self, key):
         if key in self._non_inherited_items:
